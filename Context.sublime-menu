@@ -1,0 +1,62 @@
+[
+    {
+        "caption": "C++ Tools",
+        "children": [
+            {
+                "caption": "Setup 3-Panel Layout",
+                "command": "auto_cpp_layout"
+            },
+            {
+                "caption": "Quick Create .in/.out",
+                "command": "quick_input_output"
+            },
+            { "caption": "-" },
+            {
+                "caption": "Compile & Run",
+                "command": "build",
+                "args": {"variant": "Compile & Run with .in/.out"}
+            },
+            {
+                "caption": "Compile Only",
+                "command": "build",
+                "args": {"variant": "Compile Only"}
+            },
+            {
+                "caption": "Run Only",
+                "command": "build",
+                "args": {"variant": "Run Only"}
+            },
+            { "caption": "-" },
+            {
+                "caption": "Refresh Output",
+                "command": "refresh_output"
+            },
+            {
+                "caption": "Clear Output",
+                "command": "clear_output"
+            },
+            {
+                "caption": "Create Test Files",
+                "command": "create_test_files"
+            },
+            { "caption": "-" },
+            {
+                "caption": "Focus Code Panel",
+                "command": "switch_to_code_panel"
+            },
+            {
+                "caption": "Focus Input Panel",
+                "command": "switch_to_input_panel"
+            },
+            {
+                "caption": "Focus Output Panel",
+                "command": "switch_to_output_panel"
+            },
+            { "caption": "-" },
+            {
+                "caption": "Open C++ Settings",
+                "command": "open_cpp_settings"
+            }
+        ]
+    }
+]

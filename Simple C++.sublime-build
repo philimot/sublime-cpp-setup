@@ -1,0 +1,5 @@
+{
+    "shell_cmd": "cd /d \"${file_path}\" && g++ \"${file}\" -o \"${file_base_name}.exe\" && echo === BIEN DICH THANH CONG === && \"${file_base_name}.exe\"",
+    "selector": "source.cpp",
+    "shell": true
+}

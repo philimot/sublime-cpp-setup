@@ -1,0 +1,39 @@
+{
+    // ============ C++ SPECIFIC SETTINGS ============
+    "cpp_auto_layout": true,
+    "cpp_auto_compile": false,
+    "cpp_auto_refresh": true,
+    "cpp_compiler": "g++",
+    "cpp_std_version": "c++17",
+    "cpp_flags": "-O2 -Wall -Wextra",
+    "cpp_layout_code_width": 0.7,
+    "cpp_layout_split_ratio": 0.5,
+    "refresh_output_delay": 300,
+    
+    // ============ EDITOR SETTINGS ============
+    "auto_complete": true,
+    "auto_complete_commit_on_tab": true,
+    "color_scheme": "Monokai.sublime-color-scheme",
+    "draw_white_space": "selection",
+    "ensure_newline_at_eof_on_save": true,
+    "font_face": "Consolas",
+    "font_size": 13,
+    "highlight_line": true,
+    "ignored_packages": ["Vintage"],
+    "indent_guide_options": ["draw_normal", "draw_active"],
+    "line_numbers": true,
+    "rulers": [80, 100],
+    "show_definitions": true,
+    "tab_size": 4,
+    "theme": "Adaptive.sublime-theme",
+    "translate_tabs_to_spaces": false,
+    "trim_trailing_white_space_on_save": true,
+    "word_wrap": false,
+    "wrap_width": 100,
+    
+    // ============ BUILD SETTINGS ============
+    "build_on_save": 0,
+    "save_on_focus_lost": true,
+    "show_panel_on_build": true,
+    "show_errors_inline": true,
+}
