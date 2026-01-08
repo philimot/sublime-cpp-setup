@@ -14,3 +14,7 @@
 "# OS files" 
 ".DS_Store" 
 "Thumbs.db" 
+update_*.bat
+update_*.sh
+*.backup.*
+temp_*
