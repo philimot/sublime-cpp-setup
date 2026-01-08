@@ -1,179 +1,98 @@
-# 📦 Installation Guide
+```markdown
+# 📥 Hướng dẫn cài đặt chi tiết (Detailed Installation)
 
-## 🚀 Quick Install (Windows)
+Tài liệu này hướng dẫn cách thiết lập môi trường lập trình C++ trên Sublime Text cho cả Windows và Linux.
 
-### Method 1: One-click Installer (Recommended)
-**Using our auto-installer is the easiest way:**
+---
+
+## 📌 1. Yêu cầu về Trình biên dịch (Prerequisites)
+
+Để code chạy được, bạn cần cài đặt trình biên dịch (compiler) phù hợp với hệ điều hành đang dùng:
+
+### 🪟 Trên Windows (Khuyến nghị MSYS2)
+1. Tải và cài đặt [MSYS2](https://www.msys2.org/).
+2. Mở **MSYS2 UCRT64** và chạy lệnh: 
+   `pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain`
+3. Thêm đường dẫn sau vào **Environment Variables (PATH)** của Windows:
+   `C:\msys64\ucrt64\bin`
+
+### 🐧 Trên Linux (Ubuntu/Kubuntu/Debian)
+1. Mở Terminal (Konsole) và cài đặt bộ công cụ build:
+   ```bash
+   sudo apt update && sudo apt install build-essential gdb -y
+   ```
+
+---
+
+## 🚀 2. Cài đặt tự động (Automated Install)
+
+Đây là cách nhanh nhất để cài đặt toàn bộ cấu hình (Plugin, Build System, Shortcuts).
+
+### 🔹 Cách làm trên Windows
+Tải file [install.bat](install.bat), chuột phải và chọn **Run as Administrator**.
+
+### 🔹 Cách làm trên Linux
+Mở Terminal và chạy lệnh:
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/philimot/sublime-cpp-setup/main/install_linux.sh)"
+```
+
+---
+
+## 📂 3. Cài đặt thủ công (Manual Install)
+
+Nếu bạn không muốn dùng script, hãy làm theo các bước sau:
+
+1. Truy cập thư mục cấu hình của Sublime Text:
+   - **Windows:** `%APPDATA%\Sublime Text\Packages\`
+   - **Linux:** `~/.config/sublime-text/Packages/`
+2. Clone repository này vào thư mục `User`:
+   ```bash
+   git clone https://github.com/philimot/sublime-cpp-setup.git User
+   ```
+3. Khởi động lại Sublime Text.
+
+---
+
+## ⚠️ 4. Lưu ý quan trọng về Phím tắt (Shortcuts)
+
+Hệ thống sử dụng phím tắt mặc định là `Ctrl + Alt + L` để chia layout.
+
+*   **Trên Windows:** Hoạt động ngay lập tức.
+*   **Trên Linux (KDE Plasma):** Phím này thường bị trùng với lệnh **Lock Screen (Khóa màn hình)**.
+    *   *Cách sửa:* Vào **System Settings** -> **Shortcuts** -> Tìm **Lock Session** và đổi sang phím khác hoặc Disable nó.
+
+---
+
+## 🎮 5. Kiểm tra sau khi cài đặt
+
+1. Mở Sublime Text, tạo một file `test.cpp`.
+2. Nhấn `Ctrl + Alt + L` để chia 3 màn hình.
+3. Nhấn `F5` để biên dịch và chạy.
+4. Nếu hiện thông báo `✅ COMPILE SUCCESS`, chúc mừng bạn đã thành công!
+
+---
+
+## 📖 Tài liệu bổ sung
+- [Hướng dẫn riêng cho Linux KDE](LINUX_KDE_INSTALL.md)
+- [Quay lại Trang chủ README](README.md)
+```
+
+---
+
+### 🚀 Cách cập nhật file này lên GitHub
+
+Sau khi bạn đã sửa nội dung file `INSTALL.md` trong thư mục `User`, hãy chạy các lệnh sau trong **Git Bash**:
 
 ```bash
-# Direct download and run
-cd "%APPDATA%\Sublime Text\Packages"
-powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/philimot/sublime-cpp-setup/main/install.bat' -OutFile 'install.bat'"
-install.bat
-```
+cd "/c/Users/TDG/AppData/Roaming/Sublime Text/Packages/User"
 
-**Or manually:**
-1. **Download** [install.bat](install.bat)
-2. **Right-click** → "Run as administrator"
-3. **Follow** the on-screen instructions
+# 1. Thêm file đã sửa
+git add INSTALL.md
 
-### Method 2: Manual Git Clone
-```bash
-# Open Command Prompt as Administrator
-cd "%APPDATA%\Sublime Text\Packages"
+# 2. Commit thay đổi
+git commit -m "Docs: Update INSTALL.md with cross-platform instructions"
 
-# Backup existing settings
-if exist User ren User User.backup.%date:~10,4%%date:~4,2%%date:~7,2%
-
-# Clone the repository
-git clone https://github.com/philimot/sublime-cpp-setup.git User
-
-# Restart Sublime Text
-```
-
-### Method 3: Download ZIP
-1. **Download** [ZIP archive](https://github.com/philimot/sublime-cpp-setup/archive/refs/heads/main.zip)
-2. **Extract** to: `%APPDATA%\Sublime Text\Packages\User`
-3. **Restart** Sublime Text
-
-## ⚙️ Requirements
-
-### Required Software
-- **Sublime Text 3 or 4** (Download: https://www.sublimetext.com/)
-- **C++ Compiler**: MSYS2 UCRT64 (recommended) or MinGW-w64
-
-### C++ Compiler Setup (MSYS2)
-1. **Download** from: https://www.msys2.org/
-2. **Install** to: `C:\msys64`
-3. **Add to PATH**: `C:\msys64\ucrt64\bin`
-4. **Restart** your computer
-
-## 🎮 First Run Guide
-
-### Step-by-Step Setup
-1. **Open** any `.cpp` file in Sublime Text
-2. **Press** `Ctrl+Alt+L` → Creates 3-panel layout
-3. **Add input** to `.in` file (right-top panel)
-4. **Press** `F5` → Compile & run
-5. **View output** in `.out` file (right-bottom panel)
-
-### Test Configuration
-Run this quick test to verify everything works:
-```bash
-# Create test files
-echo #include ^<iostream^> > test.cpp
-echo using namespace std; >> test.cpp
-echo int main^(^) { int a,b; cin^>^>a^>^>b; cout^<^<"Sum: "^<^<a+b^<^<endl; return 0; } >> test.cpp
-echo 10 20 > test.in
-
-# Open test.cpp in Sublime
-# Press Ctrl+Alt+L then F5
-```
-
-## 🎯 Features Overview
-
-### Layout & Navigation
-- `Ctrl+Alt+L` - Auto 3-panel layout
-- `Ctrl+1/2/3` - Switch between panels
-- Auto-create `.in/.out` files
-
-### Compile & Run
-- `F5` - Compile & run with input
-- `F6` - Compile only
-- `F7` - Run only
-- `Ctrl+F5` - Refresh output
-
-### File Management
-- `Ctrl+Shift+L` - Quick create .in/.out
-- `Ctrl+Shift+C` - Clear output file
-- `Ctrl+Shift+T` - Create test files
-
-## 🔧 Troubleshooting
-
-### Common Issues & Solutions
-
-| Problem | Solution |
-|---------|----------|
-| **"g++ not found"** | Install MSYS2 and add `C:\msys64\ucrt64\bin` to PATH |
-| **Shortcuts not working** | Restart Sublime Text after installation |
-| **Layout not appearing** | Save the .cpp file first, then press `Ctrl+Alt+L` |
-| **Build system not selected** | Go to `Tools` → `Build System` → Select `C++ Auto Layout` |
-| **No output in panel** | Check if `.in` file exists in same directory |
-
-### Debug Commands
-```python
-# Open Sublime Console (Ctrl+`)
-import sublime
-print("Plugin loaded:", sublime.active_window() != None)
-
-# Check build system
-print("Build system:", sublime.active_window().active_view().settings().get('build_system'))
-```
-
-## 📁 File Structure
-
-```
-User/
-├── auto_layout.py              # Main plugin with layout system
-├── C++ Auto Layout.sublime-build  # Build system configuration
-├── Default.sublime-keymap      # Keyboard shortcuts (F5, Ctrl+Alt+L, etc.)
-├── Preferences.sublime-settings # Editor preferences
-├── Context.sublime-menu        # Right-click context menu
-├── install.bat                 # Windows auto-installer
-├── INSTALL.md                  # This file
-└── README.md                   # Project overview
-```
-
-## 🔄 Updates & Maintenance
-
-### Update to Latest Version
-```bash
-# Navigate to User folder
-cd "%APPDATA%\Sublime Text\Packages\User"
-
-# Pull latest changes
-git pull origin main
-
-# Restart Sublime Text
-```
-
-### Create Custom Modifications
-1. Edit files in `Packages/User/`
-2. Test your changes
-3. Commit and push (if you have write access)
-```bash
-git add .
-git commit -m "Your custom modifications"
+# 3. Đẩy lên GitHub
 git push origin main
 ```
-
-## 🗑️ Uninstall
-
-### Complete Removal
-1. **Delete** the User folder:
-   ```bash
-   rmdir /s /q "%APPDATA%\Sublime Text\Packages\User"
-   ```
-2. **Restore backup** if needed:
-   ```bash
-   ren User.backup.* User
-   ```
-3. **Restart** Sublime Text
-
-### Partial Removal
-To remove only C++ setup but keep other settings:
-1. Delete specific files:
-   ```bash
-   del "C++ Auto Layout.sublime-build"
-   del auto_layout.py
-   ```
-2. Restart Sublime Text
-
-## ❓ Need Help?
-
-- **GitHub Issues**: https://github.com/philimot/sublime-cpp-setup/issues
-- **Check README**: More details in [README.md](README.md)
-- **Test First**: Always run the test procedure above
-
-## 📄 License
-This setup is distributed under the MIT License. Feel free to modify and distribute.
