@@ -1,71 +1,20 @@
 [
-    {
-        "keys": ["ctrl+alt+l"],
-        "command": "auto_cpp_layout",
-        "context": [
-            {
-                "key": "selector",
-                "operator": "equal",
-                "operand": "source.cpp"
-            }
-        ]
-    },
-    {
-        "keys": ["ctrl+shift+l"],
-        "command": "quick_input_output"
-    },
-    {
-        "keys": ["ctrl+1"],
-        "command": "switch_to_code_panel"
-    },
-    {
-        "keys": ["ctrl+2"],
-        "command": "switch_to_input_panel"
-    },
-    {
-        "keys": ["ctrl+3"],
-        "command": "switch_to_output_panel"
-    },
-    {
-        "keys": ["f5"],
-        "command": "build"
-    },
-    {
-        "keys": ["ctrl+f5"],
-        "command": "refresh_output"
-    },
-    {
-        "keys": ["f6"],
-        "command": "build",
-        "args": {
-            "variant": "Compile Only"
-        }
-    },
-    {
-        "keys": ["f7"],
-        "command": "build",
-        "args": {
-            "variant": "Run Only"
-        }
-    },
-    {
-        "keys": ["ctrl+shift+c"],
-        "command": "clear_output"
-    },
-    {
-        "keys": ["ctrl+shift+t"],
-        "command": "create_test_files"
-    },
-    {
-        "keys": ["ctrl+shift+r"],
-        "command": "show_output_in_panel"
-    },
-    {
-        "keys": ["ctrl+alt+r"],
-        "command": "toggle_output_mode"
-    },
-    {
-        "keys": ["ctrl+alt+s"],
-        "command": "open_cpp_settings"
-    }
+    // Layout & Navigation
+    {"keys": ["ctrl+alt+l"], "command": "auto_cpp_layout"},
+    {"keys": ["ctrl+shift+l"], "command": "quick_input_output"},
+    {"keys": ["ctrl+1"], "command": "switch_to_code_panel"},
+    {"keys": ["ctrl+2"], "command": "switch_to_input_panel"},
+    {"keys": ["ctrl+3"], "command": "switch_to_output_panel"},
+    
+    // Compile & Run - F5 LUÔN LUÔN COMPILE TRƯỚC
+    {"keys": ["f5"], "command": "build"},
+    
+    // Các variant khác
+    {"keys": ["ctrl+f5"], "command": "refresh_output"},
+    {"keys": ["f6"], "command": "build", "args": {"variant": "Compile Only"}},
+    {"keys": ["f7"], "command": "build", "args": {"variant": "Run Only"}},
+    
+    // File Management
+    {"keys": ["ctrl+shift+c"], "command": "clear_output"},
+    {"keys": ["ctrl+shift+t"], "command": "create_test_files"}
 ]
