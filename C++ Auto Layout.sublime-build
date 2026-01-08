@@ -1,21 +1,47 @@
 {
-    "selector": "source.cpp",
-    "shell_cmd": "g++ -std=c++17 -O2 -Wall -Wextra \"${file}\" -o \"${file_base_name}.exe\" && if exist \"${file_base_name}.in\" (\"${file_base_name}.exe\" < \"${file_base_name}.in\" > \"${file_base_name}.out\" && echo ✅ COMPILE SUCCESS && echo 📥 Input: ${file_base_name}.in && echo 📤 Output: ${file_base_name}.out && echo && echo ================ OUTPUT ================ && type \"${file_base_name}.out\" && echo ====================================) else (echo ⚠ No ${file_base_name}.in found && echo ============ INTERACTIVE MODE ============ && \"${file_base_name}.exe\")",
-    "shell": true,
-    "working_dir": "${file_path}",
-    
+    "selector": "source.c++, source.cpp",
+
+    "windows": {
+        "shell_cmd": "g++ -std=c++17 -Wall -Wextra \"${file}\" -o \"${file_base_name}.exe\" ^&^& if exist \"${file_base_name}.in\" (\"${file_base_name}.exe\" ^< \"${file_base_name}.in\" ^> \"${file_base_name}.out\" ^&^& echo ✅ COMPILE SUCCESS ^&^& echo 📥 Input: ^${file_base_name^}.in ^&^& echo 📤 Output: ^${file_base_name^}.out ^&^& echo ^&^& echo ================ OUTPUT ================ ^&^& type \"${file_base_name}.out\" ^&^& echo ====================================^) else (echo ⚠ No ^${file_base_name^}.in found ^&^& echo ============ INTERACTIVE MODE ============ ^&^& \"${file_base_name}.exe\"^)",
+        "shell": true
+    },
+
+    "linux": {
+        "shell_cmd": "cd \"${file_path}\" ^&^& g++ -std=c++17 -Wall -Wextra \"${file_name}\" -o \"${file_base_name}\" ^&^& if [ -f \"${file_base_name}.in\" ]; then ./\"${file_base_name}\" ^< \"${file_base_name}.in\" ^> \"${file_base_name}.out\" ^&^& echo '✅ COMPILE SUCCESS' ^&^& echo '📥 Input: ^${file_base_name^}.in' ^&^& echo '📤 Output: ^${file_base_name^}.out' ^&^& echo ^&^& echo '================ OUTPUT ================' ^&^& cat \"${file_base_name}.out\" ^&^& echo '===================================='; else echo '⚠ No ^${file_base_name^}.in found' ^&^& echo '============ INTERACTIVE MODE ============' ^&^& ./\"${file_base_name}\"; fi",
+        "shell": true
+    },
+
+    "osx": {
+        "shell_cmd": "cd \"${file_path}\" ^&^& g++ -std=c++17 -Wall -Wextra \"${file_name}\" -o \"${file_base_name}\" ^&^& if [ -f \"${file_base_name}.in\" ]; then ./\"${file_base_name}\" ^< \"${file_base_name}.in\" ^> \"${file_base_name}.out\" ^&^& echo '✅ COMPILE SUCCESS' ^&^& echo '📥 Input: ^${file_base_name^}.in' ^&^& echo '📤 Output: ^${file_base_name^}.out' ^&^& echo ^&^& echo '================ OUTPUT ================' ^&^& cat \"${file_base_name}.out\" ^&^& echo '===================================='; else echo '⚠ No ^${file_base_name^}.in found' ^&^& echo '============ INTERACTIVE MODE ============' ^&^& ./\"${file_base_name}\"; fi",
+        "shell": true
+    },
+
+    "working_dir": "^${file_path^}",
+
     "variants": [
         {
             "name": "Compile Only",
-            "shell_cmd": "g++ -std=c++17 -O2 -Wall -Wextra \"${file}\" -o \"${file_base_name}.exe\" && echo ✅ Compiled: ${file_base_name}.exe"
+            "windows": {
+                "shell_cmd": "g++ -std=c++17 -Wall -Wextra \"${file}\" -o \"${file_base_name}.exe\" ^&^& echo ✅ Compiled: ^${file_base_name^}.exe"
+            },
+            "linux": {
+                "shell_cmd": "g++ -std=c++17 -Wall -Wextra \"${file}\" -o \"${file_base_name}\" ^&^& echo '✅ Compiled: ^${file_base_name^}'"
+            },
+            "osx": {
+                "shell_cmd": "g++ -std=c++17 -Wall -Wextra \"${file}\" -o \"${file_base_name}\" ^&^& echo '✅ Compiled: ^${file_base_name^}'"
+            }
         },
         {
             "name": "Run Only",
-            "shell_cmd": "if exist \"${file_base_name}.in\" (\"${file_base_name}.exe\" < \"${file_base_name}.in\" > \"${file_base_name}.out\" && type \"${file_base_name}.out\") else (\"${file_base_name}.exe\")"
-        },
-        {
-            "name": "Debug Build",
-            "shell_cmd": "g++ -std=c++17 -g -Wall -Wextra \"${file}\" -o \"${file_base_name}_debug.exe\" && echo ✅ Debug build ready"
+            "windows": {
+                "shell_cmd": "if exist \"${file_base_name}.in\" (\"${file_base_name}.exe\" ^< \"${file_base_name}.in\" ^> \"${file_base_name}.out\" ^&^& type \"${file_base_name}.out\"^) else (\"${file_base_name}.exe\"^)"
+            },
+            "linux": {
+                "shell_cmd": "cd \"${file_path}\" ^&^& if [ -f \"${file_base_name}.in\" ]; then ./\"${file_base_name}\" ^< \"${file_base_name}.in\" ^> \"${file_base_name}.out\" ^&^& cat \"${file_base_name}.out\"; else ./\"${file_base_name}\"; fi"
+            },
+            "osx": {
+                "shell_cmd": "cd \"${file_path}\" ^&^& if [ -f \"${file_base_name}.in\" ]; then ./\"${file_base_name}\" ^< \"${file_base_name}.in\" ^> \"${file_base_name}.out\" ^&^& cat \"${file_base_name}.out\"; else ./\"${file_base_name}\"; fi"
+            }
         }
     ]
 }
