@@ -1,20 +1,26 @@
-"# Sublime Text" 
-"*.sublime-workspace" 
-"*.sublime-project" 
-"Session.sublime_session" 
-"" 
-"# Python cache" 
-"__pycache__/" 
-"*.pyc" 
-"" 
-"# Executable files" 
-"*.exe" 
-"*.out" 
-"" 
-"# OS files" 
-".DS_Store" 
-"Thumbs.db" 
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+Session.sublime_session
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Executable files (Dành cho Win và Linux)
+*.exe
+*.out
+*.o
+*.bin
+BV
+test
+
+# Temporary & Scripts
 update_*.bat
 update_*.sh
 *.backup.*
 temp_*
+
+# OS files
+.DS_Store
+Thumbs.db
