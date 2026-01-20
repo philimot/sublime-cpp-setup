@@ -148,21 +148,3 @@ EOF
 ```
 
 ---
-
-### 🚀 Các bước cuối cùng để đưa lên GitHub:
-
-1.  Mở **Git Bash** trên Windows (hoặc Terminal trên Linux).
-2.  Chạy các lệnh sau:
-
-```bash
-cd "/c/Users/TDG/AppData/Roaming/Sublime Text/Packages/User"
-
-# Thêm file đã sửa
-git add LINUX_KDE_INSTALL.md
-
-# Tạo commit
-git commit -m "Docs: Complete and optimize Linux KDE guide"
-
-# Đẩy lên GitHub
-git push origin main
-```

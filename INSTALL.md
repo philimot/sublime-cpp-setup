@@ -79,20 +79,3 @@ Hệ thống sử dụng phím tắt mặc định là `Ctrl + Alt + L` để ch
 ```
 
 ---
-
-### 🚀 Cách cập nhật file này lên GitHub
-
-Sau khi bạn đã sửa nội dung file `INSTALL.md` trong thư mục `User`, hãy chạy các lệnh sau trong **Git Bash**:
-
-```bash
-cd "/c/Users/TDG/AppData/Roaming/Sublime Text/Packages/User"
-
-# 1. Thêm file đã sửa
-git add INSTALL.md
-
-# 2. Commit thay đổi
-git commit -m "Docs: Update INSTALL.md with cross-platform instructions"
-
-# 3. Đẩy lên GitHub
-git push origin main
-```
