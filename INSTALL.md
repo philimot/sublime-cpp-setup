@@ -36,7 +36,7 @@ Tải file [install.bat](install.bat), chuột phải và chọn **Run as Admini
 Mở Terminal và chạy lệnh:
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/philimot/sublime-cpp-setup/main/install_linux.sh)"
-
+```
 
 ---
 
@@ -49,8 +49,7 @@ Nếu bạn không muốn dùng script, hãy làm theo các bước sau:
    - **Linux:** `~/.config/sublime-text/Packages/`
 2. Clone repository này vào thư mục `User`:
    ```bash
-   git clone https://github.com/philimot/sublime-cpp-setup.git User
-   ```
+   git clone https://github.com/philimot/sublime-cpp-setup.git User
 3. Khởi động lại Sublime Text.
 
 ---
