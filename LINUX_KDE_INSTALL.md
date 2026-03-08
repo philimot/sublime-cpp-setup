@@ -1,5 +1,4 @@
 ﻿
-```markdown
 # 🐧 Hướng Dẫn Cài Đặt Trên Kubuntu Linux (KDE Plasma)
 
 Tài liệu này hướng dẫn chi tiết cách thiết lập môi trường lập trình C++ tối ưu trên Linux, đặc biệt là môi trường KDE Plasma (Kubuntu).
@@ -138,13 +137,11 @@ EOF
 ## 🎉 Danh Sách Phím Tắt
 | Phím tắt | Chức năng |
 | :--- | :--- |
-| **Ctrl + Alt + L** | Tự động chia 3 màn hình (Layout) |
+| **Ctrl + Alt + L** | Tự động chia 3 màn hình (Kém hiệu quả nên dùng cách cuối) (Layout) |
 | **F5** | Biên dịch và Chạy (Compile & Run) |
 | **Ctrl + 1/2/3** | Di chuyển giữa Code / Input / Output |
 | **Ctrl + Shift + L** | Tạo nhanh file .in và .out |
 
 ---
-*Tài liệu được cập nhật bởi philimot - 2024*
+*Tài liệu được cập nhật bởi philimot - 2025*
 ```
-
----
