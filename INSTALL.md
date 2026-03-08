@@ -35,7 +35,7 @@ Tải file [install.bat](install.bat), chuột phải và chọn **Run as Admini
 Mở Terminal và chạy lệnh:
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/philimot/sublime-cpp-setup/main/install_linux.sh)"
-```
+
 
 ---
 
