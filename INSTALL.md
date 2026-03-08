@@ -1,4 +1,5 @@
-```markdown
+
+
 # 📥 Hướng dẫn cài đặt chi tiết (Detailed Installation)
 
 Tài liệu này hướng dẫn cách thiết lập môi trường lập trình C++ trên Sublime Text cho cả Windows và Linux.
