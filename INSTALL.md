@@ -76,6 +76,4 @@ Hệ thống sử dụng phím tắt mặc định là `Ctrl + Alt + L` để ch
 ## 📖 Tài liệu bổ sung
 - [Hướng dẫn riêng cho Linux KDE](LINUX_KDE_INSTALL.md)
 - [Quay lại Trang chủ README](README.md)
-```
-
----
+```
